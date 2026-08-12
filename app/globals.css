@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --sky-deep: #0f6ea3;
+  --sky-mid: #4fb8e8;
+  --sky-light: #eaf6fc;
+  --coral: #e2447e;
+  --coral-deep: #a82f5c;
+  --ink: #1f2a37;
+  --slate: #5b6b7a;
+  --meadow: #4f7d3f;
+  --meadow-bg: #eaf3e4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--sky-light);
+  color: var(--ink);
+}
+
+h1, h2, .display {
+  font-family: 'Fredoka', system-ui, sans-serif;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dbe9f2;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(15, 110, 163, 0.04);
+}
+
+.tag-meadow {
+  display: inline-block;
+  background: var(--meadow-bg);
+  color: var(--meadow);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+
+/* --- Form --- */
+.field {
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1.5px solid #d3e4ee;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--sky-mid);
+  box-shadow: 0 0 0 3px rgba(79, 184, 232, 0.18);
+}
+
+.btn-primary {
+  padding: 13px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Fredoka', system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(226, 68, 126, 0.28);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.btn-ghost {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px dashed #a9c7d8;
+  background: transparent;
+  color: var(--sky-deep);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-remove {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1.5px solid #f3d6de;
+  background: #fff;
+  color: var(--coral-deep);
+  cursor: pointer;
+}
+
+.btn-link {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.poster-label {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--sky-deep);
+}
+
+.poster-body {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* --- Sponsor / partner --- */
+.sponsor-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 20px;
+}
+
+.sponsor-logo {
+  height: 64px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.poster-sponsors-bar {
+  background: var(--sky-deep);
+}
+
+.poster-contact-bar {
+  background: var(--sky-mid);
+  color: #fff;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* --- Layout a due colonne, fedele al volantino --- */
+.poster-page {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .poster-page {
+    grid-template-columns: 1fr 230px;
+  }
+}
+
+.poster-main {
+  background: #fff;
+}
+
+.poster-side {
+  background: var(--sky-deep);
+  color: #fff;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 560px) {
+  .poster-side {
+    clip-path: ellipse(140% 60% at 100% 50%);
+  }
+}
+
+.poster-side-edition {
+  text-align: center;
+}
+
+.poster-cta-box {
+  background: rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.poster-cta-box p {
+  margin: 0 0 4px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.poster-cta-box .quota-line {
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* --- Hero: immagine estratta dal volantino (foto + logo + wordmark già inclusi) --- */
+.hero-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 20px 40px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(15, 42, 55, 0.55) 0%, rgba(15, 42, 55, 0.2) 70%, transparent 100%);
+}
+
+.hero-image-full {
+  width: 100%;
+  display: block;
+}
+
+.hero-image-compact {
+  width: 100%;
+  display: block;
+}
+
+.info-strip {
+  background: var(--sky-light);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.info-eyebrow {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--sky-deep);
+}
+
+.info-date {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.info-text {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 540px) {
+  .content-grid {
+    grid-template-columns: 1fr 220px;
+  }
+}
+
+.content-main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content-side {
+  background: var(--sky-deep);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.side-divider {
+  border-top: 1px solid rgba(255,255,255,0.25);
+  padding-top: 14px;
+}
+
+.banner-block {
+  background: var(--sky-deep);
+  color: #fff;
+  padding: 28px 24px;
+}
+
+.poster-dateblock {
+  text-align: center;
+}
+
+.poster-edition {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.poster-daynum {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  margin: 2px 0 0;
+  line-height: 1;
+}
+
+.poster-month {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.poster-ritrovo {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.poster-intro {
+  margin: 0;
+  padding: 16px 20px 20px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+  text-align: left;
+  background: #fff;
+}
