@@ -12,7 +12,11 @@ create table if not exists participants (
   amount numeric not null,
   payment_method text not null check (payment_method in ('card', 'cash')),
   payment_status text not null default 'pending' check (payment_status in ('pending', 'paid', 'cancelled')),
-  stripe_session_id text
+  stripe_session_id text,
+  privacy_consent boolean not null default false,
+  photo_consent boolean not null default false,
+  note text,
+  is_deleted boolean not null default false
 );
 
 -- Indici utili per l'export/ricerca veloce e per raggruppare le iscrizioni multiple

@@ -21,6 +21,8 @@ export default function Iscrizione() {
   const [contact, setContact] = useState({ email: '', phone: '' });
   const [participants, setParticipants] = useState([emptyParticipant()]);
   const [payment_method, setPaymentMethod] = useState('card');
+  const [privacyConsent, setPrivacyConsent] = useState(false);
+  const [photoConsent, setPhotoConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -45,12 +47,24 @@ export default function Iscrizione() {
   async function handleSubmit(e) {
     e.preventDefault();
     setError('');
+
+    if (!privacyConsent) {
+      setError("Devi accettare l'informativa sulla privacy per procedere.");
+      return;
+    }
+
     setLoading(true);
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contact, participants, payment_method }),
+        body: JSON.stringify({
+          contact,
+          participants,
+          payment_method,
+          privacy_consent: privacyConsent,
+          photo_consent: photoConsent,
+        }),
       });
       const data = await res.json();
 
@@ -180,6 +194,33 @@ export default function Iscrizione() {
 
         <div className="card" style={{ fontWeight: 700, color: 'var(--sky-deep)', fontFamily: 'Fredoka, sans-serif' }}>
           Totale ({participants.length} partecipant{participants.length === 1 ? 'e' : 'i'}): €{total.toFixed(2)}
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13, color: 'var(--slate)' }}>
+            <input
+              type="checkbox"
+              checked={privacyConsent}
+              onChange={(e) => setPrivacyConsent(e.target.checked)}
+              style={{ marginTop: 3 }}
+              required
+            />
+            <span>
+              Ho letto e accetto l'<a href="/privacy" target="_blank" style={{ color: 'var(--sky-deep)' }}>informativa sulla privacy</a> *
+            </span>
+          </label>
+
+          <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13, color: 'var(--slate)' }}>
+            <input
+              type="checkbox"
+              checked={photoConsent}
+              onChange={(e) => setPhotoConsent(e.target.checked)}
+              style={{ marginTop: 3 }}
+            />
+            <span>
+              Autorizzo l'utilizzo di foto e video ripresi durante l'evento sul sito e sui canali social (opzionale)
+            </span>
+          </label>
         </div>
 
         {error && <div style={{ color: '#b91c1c', fontSize: 14 }}>{error}</div>}

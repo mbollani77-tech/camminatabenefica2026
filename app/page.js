@@ -61,6 +61,10 @@ export default function Home() {
               Iscriviti →
             </a>
           </div>
+
+          <a href="/admin" style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', textAlign: 'center', textDecoration: 'none' }}>
+            Admin
+          </a>
         </div>
       </div>
 

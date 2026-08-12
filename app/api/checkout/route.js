@@ -7,10 +7,14 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { contact, participants, payment_method } = body;
+    const { contact, participants, payment_method, privacy_consent, photo_consent } = body;
 
     if (!contact?.email || !Array.isArray(participants) || participants.length === 0 || !payment_method) {
       return Response.json({ error: 'Dati mancanti o incompleti' }, { status: 400 });
+    }
+
+    if (!privacy_consent) {
+      return Response.json({ error: "Devi accettare l'informativa sulla privacy" }, { status: 400 });
     }
 
     for (const p of participants) {
@@ -31,6 +35,8 @@ export async function POST(request) {
       amount: getAmountForCategory(p.category),
       payment_method,
       payment_status: 'pending',
+      privacy_consent: true,
+      photo_consent: !!photo_consent,
     }));
 
     const { data: inserted, error: insertError } = await supabase

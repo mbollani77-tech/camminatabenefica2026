@@ -74,6 +74,43 @@ all'aperto che rappresenti l'evento):
 3. Sostituisci il file in `public/hero.jpg` con questa
 4. Ricarica la pagina: il titolo resterà leggibile grazie all'overlay scuro automatico
 
+## Privacy e consenso foto
+
+Il form richiede obbligatoriamente il consenso all'informativa privacy (pagina
+`/privacy`, raggiungibile anche da un link nel form) e in modo opzionale il
+consenso all'uso di foto/video dell'evento. Se hai già creato la tabella su
+Supabase prima di questo aggiornamento, esegui di nuovo lo script
+`supabase/schema.sql` — le colonne `privacy_consent` e `photo_consent` verranno
+aggiunte automaticamente ai nuovi record (il comando è idempotente sulla
+struttura della tabella tramite `create table if not exists`, ma se la tabella
+esiste già senza queste colonne dovrai aggiungerle manualmente con):
+
+```sql
+alter table participants add column if not exists privacy_consent boolean not null default false;
+alter table participants add column if not exists photo_consent boolean not null default false;
+```
+
+## Pannello admin: novità
+
+Il pannello ora permette anche di: eliminare (in modo reversibile) un
+partecipante, aggiungere una nota libera per riga, e "smarcare" un pagamento
+in loco già segnato per errore (il tasto cambia in "Segna non pagato"). Per
+sicurezza, lo stato dei pagamenti con carta non è modificabile a mano (viene
+gestito solo dal webhook Stripe).
+
+**Eliminazione logica**: cliccando "Elimina" il partecipante non viene
+rimosso dal database, ma solo nascosto dalla lista principale e dall'export
+CSV. Si può ripristinare in qualsiasi momento dalla sezione a tendina
+"Eliminati" in fondo alla pagina.
+
+Se il database è stato creato prima di questo aggiornamento, aggiungi le
+colonne mancanti con:
+
+```sql
+alter table participants add column if not exists note text;
+alter table participants add column if not exists is_deleted boolean not null default false;
+```
+
 ## Pagamento in loco
 
 L'opzione "pagamento in loco" (valore interno `cash` nel database, per compatibilità)
