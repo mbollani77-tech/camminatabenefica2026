@@ -5,7 +5,7 @@ export default function Home() {
       <div style={{ position: 'relative' }}>
         <img src="/header.jpg" alt="Camminata benefica" style={{ width: '100%', display: 'block' }} />
         <div className="hero-title-overlay">
-          <h1 style={{ margin: 0, fontSize: 34, fontWeight: 400, color: '#fff', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: 0.5 }}>
+          <h1 style={{ margin: 0, fontSize: 48, fontWeight: 400, color: '#fff', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: 0.5 }}>
             Camminata benefica
           </h1>
         </div>

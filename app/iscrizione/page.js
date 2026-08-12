@@ -85,7 +85,6 @@ export default function Iscrizione() {
           Domenica 20 settembre 2026 — 2ª edizione
         </p>
       </div>
-      <img src="/hero-compact.jpg" alt="Soluzioni per tutti i passi" className="hero-image-compact" />
 
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16, padding: '24px 20px 0' }}>
         <div>
