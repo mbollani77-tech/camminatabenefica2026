@@ -70,7 +70,7 @@ export async function POST(request) {
           price_data: {
             currency: 'eur',
             product_data: {
-              name: `Camminata Benefica 20/09/2026 - iscrizione (${participants.length} partecipant${participants.length === 1 ? 'e' : 'i'})`,
+              name: `Camminata Benefica 27/09/2026 - iscrizione (${participants.length} partecipant${participants.length === 1 ? 'e' : 'i'})`,
             },
             unit_amount: Math.round(total * 100),
           },

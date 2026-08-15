@@ -96,7 +96,7 @@ export default function Iscrizione() {
           Iscriviti alla camminata
         </h1>
         <p style={{ margin: '6px 0 0', fontSize: 14, opacity: 0.95 }}>
-          Domenica 20 settembre 2026 — 2ª edizione
+          Domenica 27 settembre 2026 — 2ª edizione
         </p>
       </div>
 

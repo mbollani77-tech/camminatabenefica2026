@@ -12,7 +12,7 @@ export default function Success({ searchParams }) {
     <main style={{ maxWidth: 480, margin: '0 auto' }}>
       <div className="banner-block" style={{ textAlign: 'center' }}>
         <h1 className="display" style={{ margin: 0, fontSize: 26 }}>Sei nel gruppo!</h1>
-        <p style={{ margin: '8px 0 0', fontWeight: 600 }}>Domenica 20 settembre 2026</p>
+        <p style={{ margin: '8px 0 0', fontWeight: 600 }}>Domenica 27 settembre 2026</p>
       </div>
       <img src="/header.jpg" alt="Soluzioni per tutti i passi" className="hero-image-compact" />
 
