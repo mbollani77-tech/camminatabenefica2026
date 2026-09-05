@@ -20,7 +20,7 @@ function emptyParticipant() {
 export default function Iscrizione() {
   const [contact, setContact] = useState({ email: '', phone: '' });
   const [participants, setParticipants] = useState([emptyParticipant()]);
-  const [payment_method, setPaymentMethod] = useState('card');
+  const [payment_method] = useState('cash');
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const [photoConsent, setPhotoConsent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -74,8 +74,6 @@ export default function Iscrizione() {
 
       if (data.free) {
         window.location.href = '/success?method=free';
-      } else if (payment_method === 'card' && data.checkoutUrl) {
-        window.location.href = data.checkoutUrl;
       } else {
         window.location.href = '/success?method=cash';
       }
@@ -96,7 +94,7 @@ export default function Iscrizione() {
           Iscriviti alla camminata
         </h1>
         <p style={{ margin: '6px 0 0', fontSize: 14, opacity: 0.95 }}>
-          Domenica 27 settembre 2026 — 2ª edizione
+          Domenica 4 ottobre 2026 — 2ª edizione
         </p>
       </div>
 
@@ -178,18 +176,12 @@ export default function Iscrizione() {
           </button>
         </div>
 
-        <div>
-          <p style={{ fontSize: 13, color: 'var(--slate)', marginBottom: 8 }}>Metodo di pagamento</p>
-          <div style={{ display: 'flex', gap: 16, fontSize: 14 }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <input type="radio" checked={payment_method === 'card'} onChange={() => setPaymentMethod('card')} />
-              Paga ora online (carta)
-            </label>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <input type="radio" checked={payment_method === 'cash'} onChange={() => setPaymentMethod('cash')} />
-              Pagamento in loco
-            </label>
-          </div>
+        <div className="info-strip">
+          <p className="info-eyebrow">Pagamento</p>
+          <p className="poster-body" style={{ margin: 0 }}>
+            Il pagamento della quota si effettua in loco, il giorno dell'evento
+            (contanti o carta secondo disponibilità al check-in).
+          </p>
         </div>
 
         <div className="card" style={{ fontWeight: 700, color: 'var(--sky-deep)', fontFamily: 'Fredoka, sans-serif' }}>
@@ -230,8 +222,6 @@ export default function Iscrizione() {
             ? 'Attendere...'
             : total === 0
             ? 'Confermo iscrizione gratuita'
-            : payment_method === 'card'
-            ? 'Vai al pagamento'
             : 'Confermo, pagherò in loco'}
         </button>
       </form>

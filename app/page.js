@@ -40,8 +40,8 @@ export default function Home() {
         <div className="content-side">
           <div>
             <p className="poster-edition">2ª EDIZIONE</p>
-            <p className="poster-daynum">27</p>
-            <p className="poster-month">SETTEMBRE 2026</p>
+            <p className="poster-daynum">4</p>
+            <p className="poster-month">OTTOBRE 2026</p>
           </div>
 
           <div className="side-divider">
