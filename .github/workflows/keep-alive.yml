@@ -1,0 +1,15 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    # Lunedi' e giovedi' alle 06:00 UTC (ogni 3-4 giorni, ben sotto
+    # la soglia di inattivita' di 7 giorni di Supabase free tier)
+    - cron: '0 6 * * 1,4'
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping keep-alive endpoint
+        run: curl -sf https://soluzionipertuttiipassi2026.vercel.app/api/ping
