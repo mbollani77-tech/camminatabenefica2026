@@ -1,3 +1,5 @@
+import ShareButtons from './components/ShareButtons';
+
 export default function Home() {
   return (
     <main style={{ maxWidth: 720, margin: '0 auto', background: '#fff' }}>
@@ -15,17 +17,37 @@ export default function Home() {
       <div className="content-grid">
         <div className="content-main">
           <p className="poster-body">
-            Unisciti a noi per una giornata di movimento, solidarietà e condivisione!
-            Questa camminata è aperta a tutti, senza limiti di età, abilità o provenienza.
-            Camminiamo fianco a fianco per promuovere l'inclusione sociale, il rispetto
-            delle diversità e il sostegno a chi ha più bisogno.
+            Ci sono passi che ci portano avanti. E ce ne sono altri che possono aiutare ad
+            andare avanti anche chi ci sta accanto.
+          </p>
+
+          <p className="poster-body">
+            <strong>Soluzioni per tutti i passi</strong> nasce con questo spirito: trasformare
+            una semplice camminata in un momento di incontro, inclusione e solidarietà, capace
+            di unire persone, famiglie, associazioni e realtà del nostro territorio.
+          </p>
+
+          <p className="poster-body">
+            Il 4 ottobre 2026, a Sabbio Chiese, torniamo a camminare insieme per la seconda
+            edizione della nostra camminata benefica: 3 km aperti a tutti, senza distinzioni di
+            età o abilità, perché crediamo che il valore di una comunità si misuri anche dalla
+            capacità di non lasciare indietro nessuno.
+          </p>
+
+          <p className="poster-body">
+            Per Soluzioni Informatiche significa qualcosa di più che organizzare un evento:
+            significa restituire valore al territorio nel quale lavoriamo e cresciamo ogni
+            giorno, mettendo a disposizione energie, persone e relazioni per sostenere chi
+            dedica il proprio tempo agli altri. E soprattutto significa farlo insieme.
           </p>
 
           <div>
             <p className="poster-label">All'arrivo</p>
             <p className="poster-body">
-              Stand gastronomico · laboratorio della creta (Artea) · battesimo della sella
-              (Centro Ippico Ambassador) · trucca bimbi · balli di gruppo.
+              Al Parco La Fratta la giornata continuerà con stand gastronomico, attività per
+              bambini, laboratorio della creta (Artea), battesimo della sella (Centro Ippico
+              Ambassador) e balli di gruppo: un'occasione per stare insieme e trasformare la
+              solidarietà in una vera giornata di comunità.
             </p>
           </div>
 
@@ -33,8 +55,16 @@ export default function Home() {
             <p className="poster-label" style={{ color: 'var(--meadow)' }}>
               Tutto il ricavato sarà devoluto in beneficenza
             </p>
-            <p className="poster-body">Alle associazioni Pedalabile e Sotto lo stesso cielo.</p>
+            <p className="poster-body">Alle associazioni Spazi Divergenti e Sotto lo stesso cielo.</p>
           </div>
+
+          <p className="poster-body" style={{ fontStyle: 'italic', color: 'var(--slate)' }}>
+            Un passo da soli è solo un passo. Tanti passi insieme possono fare la differenza.
+            <br />
+            Ti aspettiamo il 4 ottobre. Cammina con noi.
+          </p>
+
+          <ShareButtons />
         </div>
 
         <div className="content-side">
