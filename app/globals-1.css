@@ -128,23 +128,22 @@ h1, h2, .display {
 /* --- Sponsor / partner --- */
 .sponsor-row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 20px 10px;
+  gap: 16px;
+  padding: 28px 20px;
 }
 
 .sponsor-card {
   display: flex;
-  flex: 0 1 auto;
   align-items: center;
   justify-content: center;
   background: #fff;
-  border-radius: 10px;
-  padding: 4px 6px;
-  width: 64px;
-  height: 56px;
+  border-radius: 14px;
+  padding: 8px 12px;
+  width: 150px;
+  height: 112px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
@@ -163,13 +162,11 @@ h1, h2, .display {
 .poster-contact-bar {
   background: var(--sky-mid);
   color: #fff;
-  padding: 14px 18px;
-  border-radius: 12px;
+  padding: 16px 20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.6;
-  margin: 0;
 }
 
 .poster-contact-bar a {
@@ -188,20 +185,13 @@ h1, h2, .display {
   opacity: 0.8;
 }
 
-@media (min-width: 480px) {
-  .sponsor-row {
-    gap: 14px;
-    padding: 24px 20px;
-  }
-
-  .sponsor-card {
-    width: 100px;
-    height: 84px;
-    padding: 8px 10px;
-  }
-}
-
 @media (max-width: 480px) {
+  .sponsor-card {
+    width: 128px;
+    height: 96px;
+    padding: 6px 10px;
+  }
+
   .poster-contact-bar {
     font-size: 15px;
   }

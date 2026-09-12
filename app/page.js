@@ -65,6 +65,12 @@ export default function Home() {
           </p>
 
           <ShareButtons />
+
+          <p className="poster-contact-bar">
+            INFO: Manuela Bonacina <a href="tel:+393391055143">339 105 5143</a>
+            <span className="contact-sep">·</span>
+            Silvia Dolcetti <a href="tel:+393397053883">339 705 3883</a>
+          </p>
         </div>
 
         <div className="content-side">
@@ -98,8 +104,26 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer: immagine reale (sponsor + contatti) */}
-      <img src="/footer.jpg" alt="Sponsor e contatti" style={{ width: '100%', display: 'block' }} />
+      {/* Footer: loghi sponsor reali (grandi e leggibili) */}
+      <div className="poster-sponsors-bar">
+        <div className="sponsor-row">
+          <div className="sponsor-card">
+            <img src="/sponsors/ambassador.png" alt="Centro Ippico Ambassador" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-card">
+            <img src="/sponsors/sotto-cielo.png" alt="Sotto lo stesso cielo" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-card">
+            <img src="/sponsors/spazi-divergenti.png" alt="Spazi Divergenti" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-card">
+            <img src="/sponsors/artea.png" alt="Artea 2010" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-card">
+            <img src="/sponsors/comune.png" alt="Comune di Sabbio Chiese" className="sponsor-logo" />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
