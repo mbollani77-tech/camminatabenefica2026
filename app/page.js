@@ -7,9 +7,11 @@ export default function Home() {
       <div style={{ position: 'relative' }}>
         <img src="/header.jpg" alt="Camminata benefica" style={{ width: '100%', display: 'block' }} />
         <div className="hero-title-overlay">
+          <p className="hero-edition-badge">2ª edizione</p>
           <h1 style={{ margin: 0, fontSize: 48, fontWeight: 400, color: '#fff', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: 0.5 }}>
             Camminata benefica
           </h1>
+          <p className="hero-date-line">4 ottobre 2026</p>
         </div>
       </div>
 
@@ -44,10 +46,10 @@ export default function Home() {
           <div>
             <p className="poster-label">All'arrivo</p>
             <p className="poster-body">
-              Al Parco La Fratta la giornata continuerà con stand gastronomico, attività per
-              bambini, laboratorio della creta (Artea), battesimo della sella (Centro Ippico
-              Ambassador) e balli di gruppo: un'occasione per stare insieme e trasformare la
-              solidarietà in una vera giornata di comunità.
+              Al Parco La Fratta la giornata continuerà con stand gastronomico, laboratorio
+              della creta (Artea), battesimo della sella (Centro Ippico Ambassador),
+              truccabimbi e varie attività per adulti e bambini: un'occasione per stare
+              insieme e trasformare la solidarietà in una vera giornata di comunità.
             </p>
           </div>
 
@@ -90,9 +92,9 @@ export default function Home() {
 
           <div className="poster-cta-box">
             <p className="quota-line" style={{ marginTop: 0 }}>Info e iscrizione</p>
-            <p>Quota (assicurazione, gadget, maglietta)</p>
-            <p className="quota-line">€15 adulti · €5 bambini fino 13 anni</p>
+            <p className="quota-line">€10 adulti e bambini</p>
             <p>Gratuita over 65 e disabili</p>
+            <p>Quota prevede (assicurazione, gadget, panino e acqua)</p>
             <a href="/iscrizione" className="btn-primary btn-link" style={{ marginTop: 10, display: 'block' }}>
               Iscriviti →
             </a>
@@ -121,6 +123,12 @@ export default function Home() {
           </div>
           <div className="sponsor-card">
             <img src="/sponsors/comune.png" alt="Comune di Sabbio Chiese" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-card">
+            <img src="/sponsors/area.png" alt="Area Cooperativa Sociale" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-card">
+            <img src="/sponsors/soluzioni-informatiche.png" alt="Soluzioni Informatiche SRL" className="sponsor-logo" />
           </div>
         </div>
       </div>

@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 const CATEGORY_OPTIONS = [
-  { value: 'adulto', label: 'Adulto', amount: 15.0 },
-  { value: 'bambino', label: 'Bambino (fino a 13 anni)', amount: 5.0 },
+  { value: 'adulto', label: 'Adulto', amount: 10.0 },
+  { value: 'bambino', label: 'Bambino', amount: 10.0 },
   { value: 'senior', label: 'Over 65', amount: 0.0 },
   { value: 'agevolata', label: 'Disabili', amount: 0.0 },
 ];

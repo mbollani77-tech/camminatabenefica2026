@@ -128,7 +128,7 @@ h1, h2, .display {
 /* --- Sponsor / partner --- */
 .sponsor-row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -275,9 +275,38 @@ h1, h2, .display {
   top: 0;
   left: 0;
   right: 0;
-  padding: 18px 20px 40px;
+  padding: 10px 20px 20px;
   text-align: center;
   background: linear-gradient(to bottom, rgba(15, 42, 55, 0.55) 0%, rgba(15, 42, 55, 0.2) 70%, transparent 100%);
+}
+
+.hero-edition-badge {
+  display: inline-block;
+  margin: 0 0 6px;
+  background: var(--coral);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hero-date-line {
+  display: inline-block;
+  margin: 4px 0 0;
+  background: var(--sky-mid);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-family: 'Fredoka', sans-serif;
 }
 
 .hero-image-full {
