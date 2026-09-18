@@ -8,7 +8,7 @@ export default function Home() {
         <img src="/header.jpg" alt="Camminata benefica" style={{ width: '100%', display: 'block' }} />
         <div className="hero-title-overlay">
           <p className="hero-edition-badge">2ª edizione</p>
-          <h1 style={{ margin: 0, fontSize: 48, fontWeight: 400, color: '#fff', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: 0.5 }}>
+          <h1 style={{ margin: 0, fontSize: 'clamp(28px, 8vw, 48px)', fontWeight: 400, color: '#fff', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: 0.5, lineHeight: 1.05 }}>
             Camminata benefica
           </h1>
           <p className="hero-date-line">4 ottobre 2026</p>
